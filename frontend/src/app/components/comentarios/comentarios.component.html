@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>{{title}}</h2>
+    <hr>
+    <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)" class="row g-3">
+        <div class="row-auto">
+            <label for="idUsuario">Id Usuario</label>
+            <input type="text" name="idUsuario" class="form-control" placeholder="Id Usuario" id="inputCrearEvento" #idUsuario="ngModel" [(ngModel)]="comment.idUsuario" >
+        </div>
+        <div class="row-auto">
+            <label for="comentario">Comentario</label>
+            <textarea class="form-control" name="comentario" placeholder="Comentario" id="inputCrearEvento" #comentario="ngModel" [(ngModel)]="comment.comentario" ></textarea>
+        </div>
+       
+        <div class="row-auto">
+            <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+        </div>
+    </form>
+    <hr>
+    <div class="message succes" *ngIf="status == 'succes' ">
+        El comentario se ha creado correctamente en el evento
+    </div>
+    <div class="message succes" *ngIf="status == 'failed'">
+        El comentario NO SE HA PODIDO CREAR
+    </div>
+
+</div>

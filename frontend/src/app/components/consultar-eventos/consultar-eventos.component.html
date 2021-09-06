@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Eventos disponibles </h2>
+    <hr>
+    <ul>
+        <li *ngFor="let event of events" class="event">
+            <a [routerLink]="['/evento',event._id]">
+                
+                <h3 id="tituloEvento">{{event.titulo}}</h3>
+                <h3>{{event.descripcion}}</h3>
+                <h5>{{event.categorias}}</h5>
+            </a>
+        </li>
+    </ul>
+</div>

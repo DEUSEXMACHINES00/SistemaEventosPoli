@@ -1,0 +1,55 @@
+<br>
+<div class="container">
+    <h2>{{title}}</h2>
+    <hr>
+    <form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)" class="row g-3">
+        <div class="row-auto">
+            <label for="titulo">Titulo</label>
+            <input type="text" name="titulo" class="form-control" placeholder="Titulo" id="inputCrearEvento" #titulo="ngModel" [(ngModel)]="event.titulo" >
+        </div>
+        <div class="row-auto">
+            <label for="descripcion">Descripcion</label>
+            <textarea class="form-control" name="descripcion" placeholder="Descripcion" id="inputCrearEvento" #descripcion="ngModel" [(ngModel)]="event.descripcion" ></textarea>
+        </div>
+        <div class="row-auto">
+            <label for="categorias">Categorias</label>
+            <textarea type="text" class="form-control" name="categorias" placeholder="Categorias" id="inputCrearEvento" #categorias="ngModel" [(ngModel)]="event.categorias" ></textarea>
+        </div>
+        <div class="col-auto">
+            <label for="fecha">Fecha</label>
+            <input type="date" name="fecha" class="form-control" id="inputCrearEvento" placeholder="Fecha" #fecha="ngModel" [(ngModel)]="event.fecha">
+        </div>
+        <div class="col-auto">
+            <label for="sede">Sede</label>
+            <input type="text"  name="sede" class="form-control" id="inputCrearEvento" placeholder="Sede" #sede="ngModel"[(ngModel)]="event.sede" >
+        </div>
+        
+        <div class="row-auto">
+            <label for="facultadOrganizadora">Facultad Organizadora</label>
+            <input type="text" name="facultadOrganizadora" class="form-control" id="inputCrearEvento" placeholder="Facultad Organizadora" #facultadOrganizadora="ngModel" [(ngModel)]="event.facultadOrganizadora" >
+        </div>
+        <div class="row-auto">
+            <label for="lugarEvento">Lugar Evento</label>
+            <input type="text" name="nombre" class="form-control" id="inputCrearEvento" placeholder="Nombre" #nombre="ngModel" [(ngModel)]="event.lugarEvento.nombre">
+            <input type="text" name="direccion" class="form-control" id="inputCrearEvento" placeholder="Direccion" #direccion="ngModel" [(ngModel)]="event.lugarEvento.direccion">
+            <input type="text" name="ciudad" class="form-control" id="inputCrearEvento" placeholder="ciudad" #ciudad="ngModel" [(ngModel)]="event.lugarEvento.ciudad" >
+        </div>
+
+        <div class="col-auto">
+            <label for="programaOrganizado">Programa Organizador </label>
+            <input type="text" name="programaOrganizado" class="form-control" id="inputCrearEvento" placeholder="Programa Organizador" #programaOrganizado="ngModel" [(ngModel)]="event.programaOrganizado">
+        </div>
+
+        <div class="row-auto">
+            <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+        </div>
+    </form>
+    <hr>
+    <div class="message succes" *ngIf="status == 'succes' ">
+        El evento se ha creado correctamente
+    </div>
+    <div class="message succes" *ngIf="status == 'failed'">
+        El evento NO SE HA PODIDO CREAR
+    </div>
+
+</div>
