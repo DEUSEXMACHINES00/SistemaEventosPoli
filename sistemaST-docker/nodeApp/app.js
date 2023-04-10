@@ -6,7 +6,7 @@ var cors = require('cors');
 var app = express();
 
 //cargar archivos de rutas
-var matricula_routes = require('./routes/matricula');
+var event_routes = require('./routes/matricula');
 
 //middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 app.use(cors())
     //rutas
-app.use('/api-sistemast', matricula_routes);
+app.use('/api-sistemast', event_routes);
 
 //exportar
 module.exports = app;

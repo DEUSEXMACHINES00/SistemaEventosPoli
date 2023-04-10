@@ -1,23 +1,17 @@
+import { NgModule } from '@angular/core';
 import { ModuleWithProviders } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
+import { MatriculasComponent } from './components/matriculas/matriculas.component';
+import { InfraccionesComponent } from './components/infracciones/infracciones.component';
+import { MatriculaComponent } from './components/matricula/matricula.component';
+import { ActualizarMatriculasComponent } from './components/actualizar-matriculas/actualizar-matriculas.component';
 
-import { EventosOrganizadoresComponent } from './components/eventos-organizadores/eventos-organizadores.component';
-import { AsistentesComponent } from './components/asistentes/asistentes.component';
-import { ComentariosComponent } from './components/comentarios/comentarios.component';
-import { ConsultarEventosComponent } from './components/consultar-eventos/consultar-eventos.component';
-import { EventoComponent } from './components/evento/evento.component';
-import { ConferencistaComponent } from './components/conferencista/conferencista.component';
-import { ErrorComponent } from './components/error/error.component';
-
-const appRoutes : Routes  = [
-    {path:'' , component: ConsultarEventosComponent},
-    {path:'registrareo' , component: EventosOrganizadoresComponent},
-    {path:'consultar' , component: ConsultarEventosComponent},
-    {path:'registrarAsistentes/:id' , component: AsistentesComponent},
-    {path:'registrarComentarios/:id' , component: ComentariosComponent },
-    {path:'registrarConferencista/:id' , component: ConferencistaComponent },   
-    {path:'evento/:id' , component: EventoComponent },     
-    {path:'**' , component: ErrorComponent}
+const appRoutes: Routes = [
+  {path:'' , component: MatriculasComponent},
+  {path:'matriculas' , component: MatriculasComponent},
+  {path:'infracciones' , component: InfraccionesComponent},
+  {path:'matricula' , component: MatriculaComponent},
+  {path:'actualizar-matricula/:placa' , component: ActualizarMatriculasComponent},
 ];
 
 export const appRoutingProviders: any [] = [];
